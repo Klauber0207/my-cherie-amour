@@ -4,6 +4,9 @@ body {
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
+    position: relative;
+    padding: 50px; /* Adicione um padding para evitar sobreposição com as bordas */
+    box-sizing: border-box;
 }
 
 header {
@@ -43,3 +46,45 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+body::before,
+body::after,
+body .border-left,
+body .border-right {
+    content: '';
+    position: absolute;
+    z-index: -1; /* Para garantir que não sobreponha o conteúdo */
+}
+
+body::before {
+    background: url('tulip-top.png') repeat-x;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px; /* Ajuste conforme necessário */
+}
+
+body::after {
+    background: url('tulip-bottom.png') repeat-x;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px; /* Ajuste conforme necessário */
+}
+
+body .border-left {
+    background: url('tulip-left.png') repeat-y;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50px; /* Ajuste conforme necessário */
+}
+
+body .border-right {
+    background: url('tulip-right.png') repeat-y;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50px; /* Ajuste conforme necessário */
+}
+v
