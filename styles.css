@@ -40,14 +40,10 @@ h1, h2 {
 }
 
 .gallery img {
-    width: calc(50% - 10px); /* Ajustado para responsividade */
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
     height: auto;
-}
-
-@media (min-width: 768px) {
-    .gallery img {
-        width: calc(33.33% - 10px); /* Ajuste para telas maiores */
-    }
+    border-radius: 10px;
+    margin-bottom: 10px; /* Espaçamento entre as imagens */
 }
 
 section {
@@ -157,6 +153,16 @@ footer {
         width: 2px;
         height: 15px;
     }
+
+    .polaroids-container {
+        flex-direction: column; /* Exibir polaroids em coluna em telas menores */
+        align-items: center;
+    }
+
+    .polaroids-container .polaroid {
+        width: 100%; /* Ocupa a largura máxima do contêiner */
+        max-width: 100px; /* Limita a largura máxima da polaroid */
+    }
 }
 
 /* Estilo para o coração de fotos */
@@ -174,28 +180,4 @@ footer {
     width: 100px; /* Ajuste conforme necessário */
     height: 100px; /* Ajuste conforme necessário */
     object-fit: cover;
-}
-
-.polaroids-container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.polaroids-container .polaroid {
-    width: 120px; /* Ajuste conforme necessário */
-    height: 120px; /* Ajuste conforme necessário */
-    object-fit: cover;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    transform: rotate(-5deg) translateY(-5px);
-    transition: transform 0.3s ease-in-out;
-}
-
-@media (max-width: 768px) {
-    .polaroids-container .polaroid {
-        width: 80px; /* Ajuste conforme necessário */
-        height: 80px; /* Ajuste conforme necessário */
-    }
 }
