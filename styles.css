@@ -170,36 +170,32 @@ footer {
     margin: 20px auto;
 }
 
-.heart-container img {
-    position: absolute;
-    width: 50px; /* Ajuste conforme necessário */
-    height: 50px; /* Ajuste conforme necessário */
+.heart-container .heart-photo {
+    width: 100px; /* Ajuste conforme necessário */
+    height: 100px; /* Ajuste conforme necessário */
     object-fit: cover;
 }
 
-.heart-container img {
-    width: 100px; /* Ajuste conforme necessário */
-    height: 100px; /* Ajuste conforme necessário */
-}
-
-.polaroids {
+.polaroids-container {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     justify-content: center;
     margin-top: 20px;
 }
 
-.polaroids img {
-    width: 150px; /* Ajuste conforme necessário */
-    height: 150px; /* Ajuste conforme necessário */
+.polaroids-container .polaroid {
+    width: 120px; /* Ajuste conforme necessário */
+    height: 120px; /* Ajuste conforme necessário */
+    object-fit: cover;
     border: 2px solid #ccc;
     border-radius: 10px;
     transform: rotate(-5deg) translateY(-5px);
+    transition: transform 0.3s ease-in-out;
 }
 
 @media (max-width: 768px) {
-    .polaroids img {
-        width: 100px; /* Ajuste conforme necessário */
-        height: 100px; /* Ajuste conforme necessário */
+    .polaroids-container .polaroid {
+        width: 80px; /* Ajuste conforme necessário */
+        height: 80px; /* Ajuste conforme necessário */
     }
 }
