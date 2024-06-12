@@ -161,62 +161,50 @@ footer {
 
 /* Estilo para o coração de fotos */
 .heart-container {
-    display: grid;
-    grid-template-areas: 
-        "top-left top-right"
-        "bottom-left bottom-right";
+    position: relative;
+    display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    margin: 20px auto;
     width: 200px;
     height: 200px;
-    position: relative;
+    margin: 20px auto;
 }
 
 .heart-container img {
-    width: 100px;
-    height: 100px;
+    position: absolute;
+    width: 50px; /* Ajuste conforme necessário */
+    height: 50px; /* Ajuste conforme necessário */
     object-fit: cover;
-    border-radius: 10%;
 }
 
 .heart-container img:nth-child(1) {
-    grid-area: top-left;
-    transform: translate(-25%, -25%) rotate(-45deg);
+    top: 0;
+    left: 50%;
+    transform: translateX(-75%);
 }
 
 .heart-container img:nth-child(2) {
-    grid-area: top-right;
-    transform: translate(25%, -25%) rotate(45deg);
+    top: 0;
+    left: 50%;
+    transform: translateX(-25%);
 }
 
 .heart-container img:nth-child(3) {
-    grid-area: bottom-left;
-    transform: translate(-25%, 25%) rotate(45deg);
+    top: 0;
+    left: 50%;
+    transform: translateX(25%);
 }
 
 .heart-container img:nth-child(4) {
-    grid-area: bottom-right;
-    transform: translate(25%, 25%) rotate(-45deg);
+    top: 0;
+    left: 50%;
+    transform: translateX(75%);
 }
 
-.heart-container img:nth-child(5) {
-    position: absolute;
+.heart-container img:nth-child(5),
+.heart-container img:nth-child(6) {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-}
-
-.heart-container img:nth-child(6) {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
+    z-index: 1;
 }
