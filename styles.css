@@ -1,10 +1,9 @@
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 50px; /* Adicione padding para evitar sobreposição com as bordas */
+    padding: 10px; /* Reduzido para melhorar a exibição em dispositivos móveis */
     background-color: #f9f9f9;
     color: #333;
-    position: relative;
     box-sizing: border-box;
 }
 
@@ -29,8 +28,14 @@ h1, h2 {
 }
 
 .gallery img {
-    width: calc(33% - 10px);
+    width: calc(50% - 10px); /* Ajustado para responsividade */
     height: auto;
+}
+
+@media (min-width: 768px) {
+    .gallery img {
+        width: calc(33.33% - 10px); /* Ajuste para telas maiores */
+    }
 }
 
 section {
@@ -71,7 +76,7 @@ footer {
 .border-tulips.right {
     top: 0;
     bottom: 0;
-    width: 50px; /* Ajuste conforme necessário */
+    width: 30px; /* Reduzido para melhorar a exibição em dispositivos móveis */
     flex-direction: column;
 }
 
@@ -85,9 +90,9 @@ footer {
 
 .tulip {
     position: relative;
-    width: 30px;
-    height: 50px;
-    margin: 0 5px;
+    width: 20px; /* Reduzido para melhorar a exibição em dispositivos móveis */
+    height: 30px; /* Reduzido para melhorar a exibição em dispositivos móveis */
+    margin: 0 2px; /* Reduzido para melhorar a exibição em dispositivos móveis */
 }
 
 .tulip::before,
@@ -96,19 +101,19 @@ footer {
     position: absolute;
     background: pink;
     border-radius: 50% 50% 0 0;
-    width: 30px;
-    height: 40px;
+    width: 20px; /* Reduzido para melhorar a exibição em dispositivos móveis */
+    height: 30px; /* Reduzido para melhorar a exibição em dispositivos móveis */
 }
 
 .tulip::before {
-    top: -20px;
-    left: -15px;
+    top: -15px;
+    left: -10px;
     transform: rotate(-45deg);
 }
 
 .tulip::after {
-    top: -20px;
-    right: -15px;
+    top: -15px;
+    right: -10px;
     transform: rotate(45deg);
 }
 
@@ -116,8 +121,27 @@ footer {
     position: absolute;
     bottom: 0;
     left: 50%;
-    width: 4px;
-    height: 30px;
+    width: 3px;
+    height: 20px; /* Reduzido para melhorar a exibição em dispositivos móveis */
     background: green;
     transform: translateX(-50%);
+}
+
+/* Responsividade para tulipas */
+@media (max-width: 768px) {
+    .tulip {
+        width: 15px;
+        height: 25px;
+    }
+
+    .tulip::before,
+    .tulip::after {
+        width: 15px;
+        height: 25px;
+    }
+
+    .stem {
+        width: 2px;
+        height: 15px;
+    }
 }
