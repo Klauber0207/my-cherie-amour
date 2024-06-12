@@ -3,58 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Minha Namorada</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Pergunta Inicial</title>
+    <style>
+        /* Estilos para o corpo da página */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            color: #333;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            min-height: 100vh;
+            position: relative;
+            background-image: url('backs.jpg');
+            background-repeat: repeat;
+            background-size: 500px 900px;
+        }
+
+                                
+
+        /* Estilos para os quadros tipo carta */
+        .card {
+            border: 2px solid #ff4d4d; /* Cor da borda do quadro */
+            border-radius: 15px;
+            padding: 20px;
+            background-color: #ffffff; /* Cor de fundo do quadro */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+            text-align: center;
+            max-width: 800px; /* Largura máxima do quadro */
+            margin: 20px auto; /* Centraliza o quadro na página */
+        }
+
+        /* Estilos existentes para a página principal */
+        .main-content {
+            position: relative;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Estilos para o cabeçalho */
+        header {
+            background-color: #ffcccc;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos para o título principal */
+        h1 {
+            font-family: 'Arial Black', sans-serif;
+            color: #ff4d4d;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        /* Estilos para os botões */
+        .btn {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 20px;
+            background-color: #ff6666;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #835b5b;
+            border-color: #8b6161;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        /* Estilo para a mensagem de alerta */
+        .error-message {
+            color: red;
+            font-size: 16px;
+            margin-top: 10px;
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #ffcccc;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos para o conteúdo principal */
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Estilos para as seções */
+        section {
+            margin-bottom: 40px;
+        }
+
+        /* Estilos para as fotos do coração */
+        .heart-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .heart-photo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Estilo para a grade de fotos */
+        .photos-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .photos-grid img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Estilo para o vídeo */
+        #video {
+            text-align: center;
+        }
+
+        #video video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Estilo para o rodapé */
+        footer {
+            background-color: #ffcccc;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="border-tulips top"></div>
-    <div class="border-tulips bottom"></div>
-    <div class="border-tulips left"></div>
-    <div class="border-tulips right"></div>
-    
-    <header>
-        <h1>Para a Melhor Namorada do Mundo</h1>
-    </header>
-    <main>
-        <section id="welcome">
-            <h2>Bem-vinda Ane!</h2>
-            <p>Feliz Dia dos Namorados! Aqui estão algumas memórias e pensamentos para você.</p>
-        </section>
-        <section id="heart">
-            <h2>Nosso Coração</h2>
-            <div class="heart-container">
-                <img src="foto01.jpg" alt="Foto 1" class="heart-photo">
-            </div>
-        </section>
-        <section id="photos">
-            <h2>Nossas Lembranças</h2>
-            <div class="photos-grid">
-                <img src="foto2.jpg" alt="Foto 2" class="photo-top-left">
-                <img src="foto3.jpg" alt="Foto 3" class="photo-top-right">
-                <img src="foto4.jpg" alt="Foto 4" class="photo-middle">
-                <img src="foto5.jpg" alt="Foto 5" class="photo-bottom-left">
-                <img src="foto6.jpg" alt="Foto 6" class="photo-bottom-right">
-            </div>
-        </section>
-        <section id="story">
-            <h2>Nossa História</h2>
-            <p>[Aqui você pode contar a história de vocês]</p>
-        </section>
-        <section id="testimonials">
-            <h2>O Que Eu Amo em Você</h2>
-            <p>[Liste algumas coisas que você ama nela]</p>
-        </section>
-        <section id="video">
-            <h2>Para Você</h2>
-            <video controls>
-                <source src="video.mp4" type="video/mp4">
-                Seu navegador não suporta o elemento de vídeo.
-            </video>
-        </section>
-    </main>
-    <footer>
-        <p>Com todo o meu amor, [Seu Nome]</p>
-    </footer>
-    <script src="scripts.js"></script>
+    <!-- Tela inicial -->
+    <div id="initial-screen" class="initial-screen card">
+        <h1>Ane, você me ama e vamos nos casar no futuro? (é impossível apertar "Não" pode até tentar, eu hein)</h1>
+        <div class="btn-container">
+            <button id="yes-button" class="btn">Sim</button>
+            <button id="no-button" class="btn">Não</button>
+        </div>
+        <p id="error-message" class="error-message"></p>
+    </div>
+
+    <!-- Conteúdo principal existente -->
+    <div id="main-content" class="main-content hidden">
+        <header>
+            <h1>Para a Melhor Namorada do Mundo, Ane</h1>
+        </header>
+        <main>
+            <section id="welcome" class="card">
+                <h2>Alou Ane!</h2>
+                <p>Feliz Dia dos Namorados meu amor! Aqui estão algumas memórias e pensamentos sobre.</p>
+            </section>
+            <section id="heart" class="card">
+                <h2>Nosso Coração</h2>
+                <div class="heart-container">
+                    
+                    <img src="foto011.png" alt="Foto 1" class="heart-photo">
+                </div>
+            </section>
+            <section id="photos" class="card">
+                <h2>Nossas Lembranças</h2>
+                <div class="photos-grid">
+                    <img src="foto2.png" alt="Foto 2" class="photo-top-left">
+                    <img src="foto4.png" alt="Foto 4" class="photo-middle">
+                    <img src="foto5.png" alt="Foto 5" class="photo-bottom-left">
+                    <img src="foto6.png" alt="Foto 6" class="photo-bottom-right">
+                </div>
+            </section>
+            <section id="story" class="card">
+                <h2>Nossa História</h2>
+                <p>[Aqui você pode contar a história de vocês]</p>
+            </section>
+            <section id="testimonials" class="card">
+                <h2>O Que Eu Amo em Você</h2>
+                <p>[Liste algumas coisas que você ama nela]</p>
+            </section>
+            <section id="video" class="card">
+                <h2>Para Você</h2>
+                <video controls>
+                    <source src="video.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+            </section>
+        </main>
+        <footer>
+            <p>Com todo o meu amor, [Seu Nome]</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yesButton = document.getElementById('yes-button');
+            const noButton = document.getElementById('no-button');
+            const errorMessage = document.getElementById('error-message');
+            const mainContent = document.getElementById('main-content');
+            const initialScreen = document.getElementById('initial-screen');
+
+            yesButton.addEventListener('click', () => {
+                // Altera o background ao clicar em "Sim"
+                document.body.style.backgroundImage = "url('back.jpg')"; // Substitua com o caminho da nova imagem
+                document.body.style.backgroundSize = "cover"; // Ajusta o tamanho para cobrir toda a tela
+                document.body.style.backgroundPosition = "center"; // Centraliza a imagem no fundo
+
+                initialScreen.style.display = 'none'; // Esconde a tela inicial
+                mainContent.classList.remove('hidden'); // Exibe o conteúdo principal
+            });
+
+            noButton.addEventListener('click', () => {
+                errorMessage.textContent = 'Resposta errada';
+                errorMessage.style.display = 'block';
+                const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+                const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+                noButton.style.position = 'absolute';
+                noButton.style.left = `${x}px`;
+                noButton.style.top = `${y}px`;
+            });
+        });
+    </script>
 </body>
 </html>

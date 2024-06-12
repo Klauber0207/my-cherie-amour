@@ -1,14 +1,26 @@
-// Função para ajustar as polaroids em um varal
-function arrangePolaroids() {
-    const polaroids = document.querySelectorAll('.polaroid');
-    polaroids.forEach((polaroid, index) => {
-        const angle = -5 + (index * 5); // Ajuste o ângulo para cada polaroid
-        const translateY = -5 + (index * 10); // Ajuste o translateY para cada polaroid
-        polaroid.style.transform = `rotate(${angle}deg) translateY(${translateY}px)`;
-    });
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const yesButton = document.getElementById('yes-button');
+    const noButton = document.getElementById('no-button');
+    const errorMessage = document.getElementById('error-message');
+    const mainContent = document.getElementById('main-content');
+    const initialScreen = document.getElementById('initial-screen');
 
-// Chamada da função ao carregar a página
-window.addEventListener('load', () => {
-    arrangePolaroids();
+    yesButton.addEventListener('click', () => {
+        // Altera o background ao clicar em "Sim"
+        document.body.style.backgroundImage = "url('back.jpg')"; // Substitua com o caminho da nova imagem
+        document.body.style.backgroundSize = "cover"; // Ajusta o tamanho para cobrir toda a tela
+        document.body.style.backgroundPosition = "center"; // Centraliza a imagem no fundo
+
+        initialScreen.style.display = 'none'; // Esconde a tela inicial
+        mainContent.classList.remove('hidden'); // Exibe o conteúdo principal
+    });
+
+    noButton.addEventListener('click', () => {
+        errorMessage.textContent = 'Resposta errada';
+        const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+        const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+        noButton.style.position = 'absolute';
+        noButton.style.left = `${x}px`;
+        noButton.style.top = `${y}px`;
+    });
 });
