@@ -1,30 +1,42 @@
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 10px; /* Reduzido para melhorar a exibição em dispositivos móveis */
+    padding: 10px;
     background-color: #f9f9f9;
     color: #333;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 header {
     background-color: #ffcccc;
     padding: 20px;
     text-align: center;
+    width: 100%;
 }
 
 main {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 h1, h2 {
     color: #ff6666;
+    text-align: center;
 }
 
 .gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;
 }
 
 .gallery img {
@@ -40,14 +52,15 @@ h1, h2 {
 
 section {
     margin-bottom: 40px;
+    text-align: center;
 }
 
 footer {
     background-color: #ffcccc;
     padding: 10px;
     text-align: center;
-    position: fixed;
     width: 100%;
+    position: relative; /* Ajustado para evitar sobreposição */
     bottom: 0;
 }
 
@@ -61,7 +74,7 @@ footer {
 .border-tulips.bottom {
     left: 0;
     right: 0;
-    height: 30px; /* Ajuste conforme necessário */
+    height: 50px; /* Ajuste conforme necessário */
 }
 
 .border-tulips.top {
@@ -144,4 +157,66 @@ footer {
         width: 2px;
         height: 15px;
     }
+}
+
+/* Estilo para o coração de fotos */
+.heart-container {
+    display: grid;
+    grid-template-areas: 
+        "top-left top-right"
+        "bottom-left bottom-right";
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.heart-container img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10%;
+}
+
+.heart-container img:nth-child(1) {
+    grid-area: top-left;
+    transform: translate(-25%, -25%) rotate(-45deg);
+}
+
+.heart-container img:nth-child(2) {
+    grid-area: top-right;
+    transform: translate(25%, -25%) rotate(45deg);
+}
+
+.heart-container img:nth-child(3) {
+    grid-area: bottom-left;
+    transform: translate(-25%, 25%) rotate(45deg);
+}
+
+.heart-container img:nth-child(4) {
+    grid-area: bottom-right;
+    transform: translate(25%, 25%) rotate(-45deg);
+}
+
+.heart-container img:nth-child(5) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.heart-container img:nth-child(6) {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
 }
