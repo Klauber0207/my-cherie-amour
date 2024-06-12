@@ -1,5 +1,6 @@
+/* Estilos para o corpo da página */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 10px;
     background-color: #f9f9f9;
@@ -10,56 +11,13 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    position: relative; /* Necessário para posicionamento das bordas de tulipas */
+    background-image: url('border.png'); /* Imagem de fundo para as bordas */
+    background-repeat: repeat; /* Repete a imagem em toda a borda */
+    background-size: auto; /* Ajusta o tamanho da imagem conforme necessário */
 }
 
-header {
-    background-color: #ffcccc;
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-}
-
-main {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-h1, h2 {
-    color: #ff6666;
-    text-align: center;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
-.gallery img {
-    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px; /* Espaçamento entre as imagens */
-}
-
-section {
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-footer {
-    background-color: #ffcccc;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
-    position: relative; /* Ajustado para evitar sobreposição */
-    bottom: 0;
-}
-
+/* Estilos para as bordas de tulipas */
 .border-tulips {
     position: absolute;
     display: flex;
@@ -85,7 +43,7 @@ footer {
 .border-tulips.right {
     top: 0;
     bottom: 0;
-    width: 30px; /* Reduzido para melhorar a exibição em dispositivos móveis */
+    width: 30px; /* Ajuste conforme necessário */
     flex-direction: column;
 }
 
@@ -99,9 +57,9 @@ footer {
 
 .tulip {
     position: relative;
-    width: 20px; /* Reduzido para melhorar a exibição em dispositivos móveis */
-    height: 30px; /* Reduzido para melhorar a exibição em dispositivos móveis */
-    margin: 0 2px; /* Reduzido para melhorar a exibição em dispositivos móveis */
+    width: 20px; /* Ajuste conforme necessário */
+    height: 30px; /* Ajuste conforme necessário */
+    margin: 0 2px; /* Ajuste conforme necessário */
 }
 
 .tulip::before,
@@ -110,8 +68,8 @@ footer {
     position: absolute;
     background: pink;
     border-radius: 50% 50% 0 0;
-    width: 20px; /* Reduzido para melhorar a exibição em dispositivos móveis */
-    height: 30px; /* Reduzido para melhorar a exibição em dispositivos móveis */
+    width: 20px; /* Ajuste conforme necessário */
+    height: 30px; /* Ajuste conforme necessário */
 }
 
 .tulip::before {
@@ -131,7 +89,7 @@ footer {
     bottom: 0;
     left: 50%;
     width: 3px;
-    height: 20px; /* Reduzido para melhorar a exibição em dispositivos móveis */
+    height: 20px; /* Ajuste conforme necessário */
     background: green;
     transform: translateX(-50%);
 }
@@ -154,14 +112,37 @@ footer {
         height: 15px;
     }
 
-    .polaroids-container {
-        flex-direction: column; /* Exibir polaroids em coluna em telas menores */
-        align-items: center;
+    .photos-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+        grid-template-rows: auto auto auto; /* Três linhas automáticas */
+        gap: 10px;
+        justify-items: center;
     }
 
-    .polaroids-container .polaroid {
-        width: 100%; /* Ocupa a largura máxima do contêiner */
-        max-width: 100px; /* Limita a largura máxima da polaroid */
+    .photo-top-left {
+        grid-column: 1 / span 1; /* Início na coluna 1, span 1 coluna */
+        grid-row: 1 / span 1; /* Início na linha 1, span 1 linha */
+    }
+
+    .photo-top-right {
+        grid-column: 2 / span 1; /* Início na coluna 2, span 1 coluna */
+        grid-row: 1 / span 1; /* Início na linha 1, span 1 linha */
+    }
+
+    .photo-middle {
+        grid-column: 1 / span 2; /* Início na coluna 1, span 2 colunas */
+        grid-row: 2 / span 1; /* Início na linha 2, span 1 linha */
+    }
+
+    .photo-bottom-left {
+        grid-column: 1 / span 1; /* Início na coluna 1, span 1 coluna */
+        grid-row: 3 / span 1; /* Início na linha 3, span 1 linha */
+    }
+
+    .photo-bottom-right {
+        grid-column: 2 / span 1; /* Início na coluna 2, span 1 coluna */
+        grid-row: 3 / span 1; /* Início na linha 3, span 1 linha */
     }
 }
 
@@ -177,7 +158,134 @@ footer {
 }
 
 .heart-container .heart-photo {
-    width: 100px; /* Ajuste conforme necessário */
-    height: 100px; /* Ajuste conforme necessário */
+    width: 300px; /* Ajuste conforme necessário */
+    height: 300px; /* Ajuste conforme necessário */
     object-fit: cover;
+}
+
+/* Estilo para as fotos em grid */
+.photos-grid img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Estilos para o cabeçalho */
+header {
+    background-color: #ffcccc;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px; /* Espaçamento abaixo do cabeçalho */
+    border-radius: 10px; /* Borda arredondada */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos para o título principal */
+h1 {
+    font-family: 'Arial Black', sans-serif;
+    color: #ff4d4d;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para os títulos das seções */
+h2 {
+    font-family: 'Arial', sans-serif;
+    color: #ff6666;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para os parágrafos */
+p {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Estilos para o conteúdo principal */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para as seções */
+section {
+    margin-bottom: 40px;
+}
+
+
+/* Estilos para as fotos do coração */
+.heart-container {
+    position: relative;
+    width: 300px; /* Largura do contêiner do coração */
+    height: 300px; /* Altura do contêiner do coração */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    overflow: hidden; /* Esconde partes da imagem que excedem o contêiner */
+}
+
+.heart-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Garante que a imagem ocupe toda a largura do contêiner */
+    height: 100%; /* Garante que a imagem ocupe toda a altura do contêiner */
+    object-fit: cover; /* Redimensiona a imagem para cobrir todo o contêiner mantendo a proporção */
+}
+
+/* Estilo para a grade de fotos */
+.photos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre as fotos */
+}
+
+.photos-grid img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner pai */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Borda arredondada para as fotos */
+}
+
+/* Estilo para o vídeo */
+#video {
+    text-align: center;
+}
+
+#video video {
+    max-width: 100%; /* Garante que o vídeo não ultrapasse a largura do contêiner pai */
+    height: auto; /* Mantém a proporção do vídeo */
+}
+
+/* Estilo para o rodapé */
+footer {
+    background-color: #ffcccc;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    position: relative; /* Ajustado para evitar sobreposição */
+    bottom: 0;
+    margin-top: 20px; /* Espaçamento acima do rodapé */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .heart-photo {
+        width: 200px; /* Ajuste para telas menores */
+        height: 200px; /* Ajuste para telas menores */
+    }
+
+    .photos-grid {
+        gap: 10px; /* Reduz o espaçamento entre as fotos */
+    }
+
+    /* Ajuste para a seção de fotos */
+    .photo-top-left,
+    .photo-top-right,
+    .photo-middle,
+    .photo-bottom-left,
+    .photo-bottom-right {
+        width: 150px; /* Ajuste para telas menores */
+        height: 150px; /* Ajuste para telas menores */
+    }
 }
